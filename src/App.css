@@ -260,9 +260,7 @@
     .section {
       width: 450px;
     }
-    .logo {
-      /* width: 100px; */
-    }
+    
     h1.name {
       font-size: 20px;
     }
@@ -278,3 +276,6 @@
     }
   }
   
+  .d-none {
+    display: none;
+  }

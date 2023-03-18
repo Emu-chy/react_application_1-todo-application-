@@ -1,18 +1,24 @@
+import { useState } from "react";
 import "./App.css";
 import Button from "./components/Button";
 import Header from "./components/Header";
-import ScoreBoard from "./components/ScoreBoard";
+import Scoreboard from "./components/Scoreboard";
 
 function App() {
+    const [addCounter, setAddCounter] = useState([]);
+
+    const handleClick = () => {
+        setAddCounter([...addCounter, { id: 1 }]);
+    };
     return (
         <>
-            <section class="section">
+            <section className="section">
                 <Header />
-                <ScoreBoard />
-                <Button />
+                <Scoreboard addCounter={addCounter} />
+                <Button handleClick={handleClick} />
             </section>
 
-            <section class="mask"></section>
+            <section className="mask"></section>
         </>
     );
 }
