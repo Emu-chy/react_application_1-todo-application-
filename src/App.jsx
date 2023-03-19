@@ -5,16 +5,24 @@ import Header from "./components/Header";
 import Scoreboard from "./components/Scoreboard";
 
 function App() {
-    const [addCounter, setAddCounter] = useState([]);
+    const [addCounter, setAddCounter] = useState([{ id: 1 }]);
 
     const handleClick = () => {
-        setAddCounter([...addCounter, { id: 1 }]);
+        const counter = addCounter.length + 1;
+        setAddCounter([...addCounter, { id: counter }]);
+    };
+
+    const handleDelete = (id) => {
+        const deletedItem = addCounter.filter((item, ind) => {
+            return item.id !== id;
+        });
+        setAddCounter(deletedItem);
     };
     return (
         <>
             <section className="section">
                 <Header />
-                <Scoreboard addCounter={addCounter} />
+                <Scoreboard handleDelete={handleDelete} addCounter={addCounter} />
                 <Button handleClick={handleClick} />
             </section>
 

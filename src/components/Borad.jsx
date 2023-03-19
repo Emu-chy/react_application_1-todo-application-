@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Borad = () => {
+const Borad = ({ boardNumber, handleDelete }) => {
     const [addtion, setAdditon] = useState("");
     const [totalValue, setTotalValue] = useState(0);
     const [subtraction, setSubtraction] = useState("");
@@ -21,10 +21,10 @@ const Borad = () => {
         <>
             <div className="match">
                 <div className="wrapper">
-                    <button className="lws-delete">
+                    <button onClick={() => handleDelete(boardNumber)} className="lws-delete">
                         <img src="./image/delete.svg" alt="" />
                     </button>
-                    <h3 className="lws-matchName">Match 1</h3>
+                    <h3 className="lws-matchName">Match {boardNumber}</h3>
                 </div>
 
                 <div className="inc-dec">
