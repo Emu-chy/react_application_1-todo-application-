@@ -8,9 +8,9 @@ const Scoreboard = ({ addCounter, handleDelete }) => {
                 {addCounter.map((counter) => {
                     return (
                         <Borad
-                            handleDelete={handleDelete}
                             key={counter.id}
                             boardNumber={counter.id}
+                            handleDelete={handleDelete}
                         />
                     );
                 })}

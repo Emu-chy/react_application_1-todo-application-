@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import Resetbtn from "./Resetbtn";
-import Scoreboard from "./ScoreBoard";
 
-const Button = ({ handleClick }) => {
+const Button = ({ handleClick, handleReset }) => {
     return (
         <>
             <div className="add_match">
                 <button onClick={handleClick} className="btn lws-addMatch">
                     Add Another Match
                 </button>
-                <Resetbtn />
+                <Resetbtn handleReset={handleReset} />
             </div>
         </>
     );

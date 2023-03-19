@@ -1,8 +1,9 @@
 import { useState } from "react";
-import "./App.css";
+
 import Button from "./components/Button";
 import Header from "./components/Header";
 import Scoreboard from "./components/Scoreboard";
+import "./App.css";
 
 function App() {
     const [addCounter, setAddCounter] = useState([{ id: 1 }]);
@@ -18,15 +19,17 @@ function App() {
         });
         setAddCounter(deletedItem);
     };
+
+    const handleReset = () => {
+        setAddCounter([]);
+    };
     return (
         <>
             <section className="section">
                 <Header />
-                <Scoreboard handleDelete={handleDelete} addCounter={addCounter} />
-                <Button handleClick={handleClick} />
+                <Scoreboard addCounter={addCounter} handleDelete={handleDelete} />
+                <Button handleClick={handleClick} handleReset={handleReset} />
             </section>
-
-            <section className="mask"></section>
         </>
     );
 }
