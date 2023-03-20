@@ -21,7 +21,7 @@ function App() {
     };
 
     const handleReset = () => {
-        setAddCounter([]);
+        setAddCounter([{}]);
     };
     return (
         <>
